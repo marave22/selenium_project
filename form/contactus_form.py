@@ -40,9 +40,7 @@ class ContactUs:
 
     def submit_form(self):
         form_submit = self.driver.find_element_by_xpath(self.form_submit)
-        success_message = self.driver.find_element_by_xpath('//*[@id="presscore-contact-form-widget-3"]/form/div[1]/div').text
         form_submit.click()
-        success_message.send_keys()
 
     def clear_form(self):
         form_clear = self.driver.find_element_by_xpath(self.form_clear)
