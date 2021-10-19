@@ -10,8 +10,9 @@ class ContactUs:
         self.country = LocatorsXPath.country
         self.company = LocatorsXPath.company
         self.message = LocatorsXPath.message
-        self.submit = LocatorsXPath.submit
-        self.clear = LocatorsXPath.clear
+        self.form_submit = LocatorsXPath.submit
+        self.form_clear = LocatorsXPath.clear
+        # self.success_submit = LocatorsXPath.success_message
 
     def input_name(self, text):
         input_name = self.driver.find_element_by_xpath(self.name)
@@ -37,10 +38,12 @@ class ContactUs:
         input_message = self.driver.find_element_by_xpath(self.message)
         input_message.send_keys(text)
 
-    def submit(self):
-        form_submit = self.driver.find_element_by_xpath(self.submit)
+    def submit_form(self):
+        form_submit = self.driver.find_element_by_xpath(self.form_submit)
+        success_message = self.driver.find_element_by_xpath('//*[@id="presscore-contact-form-widget-3"]/form/div[1]/div').text
         form_submit.click()
+        success_message.send_keys()
 
-    def clear(self):
-        form_clear = self.driver.find_element_by_xpath(self.clear)
+    def clear_form(self):
+        form_clear = self.driver.find_element_by_xpath(self.form_clear)
         form_clear.click()

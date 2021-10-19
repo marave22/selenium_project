@@ -7,3 +7,4 @@ class LocatorsXPath:
     message = "/html/body/div[1]/div[2]/div[2]/div/aside/div/section[2]/form/span/textarea"
     submit = "/html/body/div[1]/div[2]/div[2]/div/aside/div/section[2]/form/p/a[1]"
     clear = "/html/body/div[1]/div[2]/div[2]/div/aside/div/section[2]/form/p/a[2]"
+    # success_message = "/html/body/div[1]/div[2]/div[2]/div/aside/div/section[2]/form/div[1]/div"
