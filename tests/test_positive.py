@@ -1,3 +1,7 @@
+# Positive - Check the clear button
+# Positive - Check that the success notification pops up after form submission
+
+
 from form.base_page import Base
 import pytest
 from time import sleep
@@ -53,8 +57,8 @@ class TestPositive(Base):
     def test_2(self):
         driver = self.driver
         contact = ContactUs(driver)
-        name_input = "John Doe"
-        name_output = "John Doe"
+        name_input = "John Smith"
+        name_output = "John Smith"
         contact.input_name(name_input)
         driver.implicitly_wait(10)
         assert name_input == name_output, "positive test failed"
@@ -89,7 +93,6 @@ class TestPositive(Base):
         driver.implicitly_wait(10)
         assert message_input == message_output, "positive test failed"
 
-        driver.implicitly_wait(5)
         contact.submit_form()
         assert "Feedback has been sent to the administrator" not in driver.page_source
         sleep(5)

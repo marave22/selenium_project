@@ -12,7 +12,6 @@ class ContactUs:
         self.message = LocatorsXPath.message
         self.form_submit = LocatorsXPath.submit
         self.form_clear = LocatorsXPath.clear
-        # self.success_submit = LocatorsXPath.success_message
 
     def input_name(self, text):
         input_name = self.driver.find_element_by_xpath(self.name)
