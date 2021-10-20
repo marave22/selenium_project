@@ -10,7 +10,6 @@ from form.base_page import Base
 import pytest
 from time import sleep
 from form.contactus_form import ContactUs
-from collections import Counter
 
 
 @pytest.mark.usefixtures('set_up')
@@ -59,7 +58,8 @@ class TestNegative(Base):
         driver = self.driver
         contact = ContactUs(driver)
         contact.input_country(company_input)
-        assert company_input == company_output or Counter(company_input) > 20, "test failed"
+        count = len(company_input)
+        assert company_input == company_output or count >= 20, "test failed"
         driver.implicitly_wait(10)
 
     @pytest.mark.parametrize("message_input, message_output", [(" ", "A while back I needed to count the amount"),
@@ -68,6 +68,7 @@ class TestNegative(Base):
         driver = self.driver
         contact = ContactUs(driver)
         contact.input_message(message_input)
-        assert message_input == message_output or Counter(message_input) > 180, "test failed"
+        count = len(message_input)
+        assert message_input == message_output or count >= 180, "test failed"
         driver.implicitly_wait(10)
         sleep(3)
