@@ -1,4 +1,4 @@
-# selenium_project
+# selenium framework practice project: contact-us form
 http://www.seleniumframework.com/Practiceform/
 
 **For the checking the project, please checkout to master branch.**
