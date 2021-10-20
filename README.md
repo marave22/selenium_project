@@ -1,6 +1,8 @@
 # selenium_project
 
- There exist 19 cases, 2 positive cases & 17 negative.
+**For the checking the project, please checkout to master branch.**
+
+There exist 19 cases, 2 positive cases & 17 negative.
 
 Positive - Check the clear button
 Positive - Check that the success notification pops up after form submission
